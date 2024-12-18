@@ -1,0 +1,794 @@
+@charset "utf-8";
+
+/* .ttl_box {
+
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 60px;
+    font-family: "Just Me Again Down Here", cursive;
+    font-size: 30px;
+}
+
+.ttl_box span {
+    display: inline-block;
+}
+
+.ttl_box .ttl {
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+}
+
+.sb_ttl {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 10px;
+} */
+
+
+
+/* ---------- */
+/* pc */
+/* @media(width>=1060px) {
+    .ttl_box {
+        text-align: center;
+        margin-top: 100px;
+        font-size: 50px;
+        font-family: "Just Me Again Down Here", cursive;
+    }
+
+    .sb_ttl {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 13px;
+    }
+} */
+
+/* ローディング画面 */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeOut 2.5s 3.5s forwards;
+}
+
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.loading__logo {
+    opacity: 0;
+    animation: logo_fade 3s 0.5s forwards;
+    width: 200px;
+}
+
+@keyframes logo_fade {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+.sakura {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.sakura li {
+    width: 18px;
+    position: absolute;
+    list-style: none;
+    top: -50px;
+    animation: fall 2s linear infinite, rotate1 2s ease-in-out infinite alternate;
+}
+
+/* 桜が落ちるアニメーション */
+@keyframes fall {
+    to {
+        top: 120%;
+    }
+}
+
+/* 桜が左右に揺れるアニメーション */
+@keyframes sway1 {
+    from {
+        /* translateX＝水平方向 */
+        /*rotate=回転*/
+        transform: translateX(0px) rotate(0deg);
+        /* top: 0; */
+    }
+
+    to {
+        transform: translateX(50px) rotate(-45deg);
+        /* top: 120%; */
+    }
+
+}
+
+@keyframes sway2 {
+    from {
+        transform: translateX(50px) rotate(-45deg);
+        /* top: 0; */
+    }
+
+    to {
+        transform: translateX(0px) rotate(0deg);
+        /* top: 120%; */
+    }
+
+}
+
+
+.sakura li:nth-child(1) {
+    left: 0%;
+    width: 20px;
+    height: 15px;
+    /* １０秒かけて落ちる */
+    animation: fall 10s linear infinite,
+        /* アニメーション方向反転、最初から最後までゆっくり反転 */
+        sway1 3s ease-in-out infinite alternate;
+    /* アニメーション開始時間 */
+    /* ２秒後に開始される */
+    animation-delay: 1s;
+}
+
+.sakura li:nth-child(2) {
+    left: 5%;
+    width: 13px;
+    height: 9px;
+    animation: fall 10s linear infinite,
+        sway1 2s ease-in-out infinite alternate;
+    animation-delay: 4s;
+}
+
+.sakura li:nth-child(3) {
+    left: 15%;
+    width: 16px;
+    height: 10px;
+    animation: fall 9s linear infinite,
+        sway1 3.5s ease-in-out infinite alternate;
+    animation-delay: 5s;
+}
+
+.sakura li:nth-child(4) {
+    left: 30%;
+    width: 16px;
+    height: 10px;
+    animation: fall 8s linear infinite,
+        sway2 4s ease-in-out infinite alternate;
+    animation-delay: 3s;
+}
+
+.sakura li:nth-child(5) {
+    left: 40%;
+    width: 16px;
+    height: 10px;
+    animation: fall 10s linear infinite,
+        sway1 4s ease-in-out infinite alternate;
+    animation-delay: 0s;
+}
+
+.sakura li:nth-child(6) {
+    left: 55%;
+    width: 20px;
+    height: 15px;
+    animation: fall 11s linear infinite,
+        sway2 3s ease-in-out infinite alternate;
+    animation-delay: 2s;
+}
+
+.sakura li:nth-child(7) {
+    left: 65%;
+    width: 16px;
+    height: 10px;
+    animation: fall 7s linear infinite,
+        sway2 3.5s ease-in-out infinite alternate;
+    animation-delay: 5s;
+}
+
+.sakura li:nth-child(8) {
+    left: 50%;
+    width: 13px;
+    height: 9px;
+    animation: fall 7s linear infinite,
+        sway1 3s ease-in-out infinite alternate;
+    animation-delay: 2s;
+}
+
+
+/* 横に揺れるアニメーション */
+@keyframes sway {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.ttl_box {
+    animation: sway 2s infinite ease-in-out;
+}
+
+/* ---------- */
+/* pc */
+@media(width>=1060px) {
+
+    /* ローディング画面 */
+    .loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 10;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: fadeOut 1.5s 2.5s forwards;
+    }
+
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    .loading__logo {
+        opacity: 0;
+        animation: logo_fade 3s 0.3s forwards;
+        width: 400px;
+    }
+
+    .sakura {
+        position: absolute;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .sakura li {
+        width: 18px;
+        position: absolute;
+        list-style: none;
+        top: -50px;
+        animation: fall 4s linear infinite, rotate1 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes fall {
+        to {
+            top: 120%;
+        }
+    }
+
+    @keyframes sway1 {
+        from {
+            transform: translateX(0px) rotate(0deg);
+            /* top: 0; */
+        }
+
+        to {
+            transform: translateX(200px) rotate(-45deg);
+            /* top: 120%; */
+        }
+
+    }
+
+    @keyframes sway2 {
+        from {
+            transform: translateX(200px) rotate(-45deg);
+            /* top: 0; */
+        }
+
+        to {
+            transform: translateX(0px) rotate(0deg);
+            /* top: 120%; */
+        }
+    }
+
+
+    .sakura li:nth-child(1) {
+        left: 70%;
+        width: 24px;
+        height: 15px;
+        animation: fall 10s linear infinite,
+            sway1 3s ease-in-out infinite alternate;
+        animation-delay: 2s;
+    }
+
+    .sakura li:nth-child(2) {
+        left: 15%;
+        width: 13px;
+        height: 9px;
+        animation: fall 11s linear infinite,
+            sway1 2s ease-in-out infinite alternate;
+        animation-delay: 8s;
+    }
+
+    .sakura li:nth-child(3) {
+        left: 15%;
+        width: 16px;
+        height: 10px;
+        animation: fall 9s linear infinite,
+            sway1 3.5s ease-in-out infinite alternate;
+        animation-delay: 10s;
+    }
+
+    .sakura li:nth-child(4) {
+        left: 30%;
+        width: 20px;
+        height: 10px;
+        animation: fall 8s linear infinite,
+            sway2 4s ease-in-out infinite alternate;
+        animation-delay: 7s;
+    }
+
+    .sakura li:nth-child(5) {
+        left: 40%;
+        width: 20px;
+        height: 10px;
+        animation: fall 10s linear infinite,
+            sway1 4s ease-in-out infinite alternate;
+        animation-delay: 0s;
+    }
+
+    .sakura li:nth-child(6) {
+        left: 55%;
+        width: 24px;
+        height: 15px;
+        animation: fall 11s linear infinite,
+            sway2 3s ease-in-out infinite alternate;
+        animation-delay: 3s;
+    }
+
+    .sakura li:nth-child(7) {
+        left: 65%;
+        width: 16px;
+        height: 10px;
+        animation: fall 7s linear infinite,
+            sway2 3.5s ease-in-out infinite alternate;
+        animation-delay: 7s;
+    }
+
+    .sakura li:nth-child(8) {
+        left: 50%;
+        width: 18px;
+        height: 9px;
+        animation: fall 7s linear infinite,
+            sway1 3s ease-in-out infinite alternate;
+        animation-delay: 3s;
+    }
+
+    .sakura li:nth-child(9) {
+        left: 60%;
+        width: 16px;
+        height: 10px;
+        animation: fall 6s linear infinite,
+            sway2 4s ease-in-out infinite alternate;
+        animation-delay: 4s;
+    }
+}
+
+/* 横に揺れるアニメーション */
+@keyframes sway {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.ttl_box {
+    animation: sway 2s infinite ease-in-out;
+}
+
+/* ==================== */
+/* name */
+/* ==================== */
+.name {
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 200px;
+    margin-top: 150px;
+}
+
+.name h2 {
+    margin: 50px 10px 20px 10px;
+    /*文字の余白*/
+    /*上下左右*/
+
+    /* position: relative; */
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+    /*文字の太さ*/
+    font-style: normal;
+    background-image: linear-gradient(20deg,
+            /*アニメーションの光の角度*/
+            rgb(248, 153, 142) 45%,
+            /*アニメーション後の文字色*/
+            #f3e6d9 70%,
+            /*アニメーション中の文字色*/
+            rgb(248, 153, 142) 55%);
+    /*アニメーション前の文字色*/
+    background-size: 500% 100%;
+    /*背景のサイズ*/
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: shine 7s infinite;
+    /*アニメーションの時間*/
+    /*infiniteで無限ループ*/
+}
+
+/* ---------- */
+/* pc */
+@media(width>=1060px) {
+    .name {
+        font-size: 50px;
+        text-align: center;
+        margin-bottom: 200px;
+        margin-top: 200px;
+    }
+
+    .name h2 {
+        margin: 50px 10px 20px 10px;
+        /*文字の余白*/
+        /*上下左右*/
+
+        /* position: relative; */
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 500;
+        /*文字の太さ*/
+        font-style: normal;
+        background-image: linear-gradient(20deg,
+                /*アニメーションの光の角度*/
+                rgb(248, 153, 142) 45%,
+                /*アニメーション後の文字色*/
+                #f3e6d9 70%,
+                /*アニメーション中の文字色*/
+                rgb(248, 153, 142) 55%);
+        /*アニメーション前の文字色*/
+        background-size: 500% 100%;
+        /*背景のサイズ*/
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: shine 7s infinite;
+        /*アニメーションの時間*/
+        /*infiniteで無限ループ*/
+    }
+}
+
+/*------------*/
+/* 写真 */
+/*------------*/
+
+.img-box {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hobby {
+    color: #f5ecf1;
+    font-size: 17px;
+    background: linear-gradient(transparent 10%, #f37792 30%);
+}
+
+
+.blog_list {
+    max-width: 350px;
+    margin: 0 auto;
+    padding-left: 0px;
+}
+
+.blog_list img {
+    display: flex;
+    width: 60px;
+    height: auto;
+    padding-top: 50px;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+
+/* ----- */
+/* works */
+/* ----- */
+/* .works_list li {
+    padding: 30px;
+    margin: 0px;
+    padding-left: 0px;
+    list-style: none;
+}
+
+.works_list img {
+    margin-bottom: 20px;
+}
+
+.works {
+    max-width: 200px;
+    margin: 0 auto;
+} */
+.works_list {
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+ul {
+    padding-inline-start: 0px;
+}
+
+.works_list img {
+    display: flex;
+    margin: 0 auto 10 auto;
+    padding-left: 0%;
+    width: 80%;
+    height: 300px;
+    object-fit: cover;
+}
+
+
+/* ---------- */
+/* tablet */
+@media(width>=700px) {
+    .works_list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    .works_list li {
+        max-width: 320px;
+    }
+}
+
+@media(width>=1060px) {
+    .works_list {
+        max-width: 1060px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+
+    .works_list li {
+        width: 30%;
+    }
+
+}
+
+/* ---------- */
+/* pc */
+/* @media(width>=1060px) {
+    .works {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+} */
+
+/* ---------- */
+/* pc */
+@media(width>=1060px) {
+
+    /* ーーーーー */
+    /* 写真pc */
+    /* ーーーーー */
+
+
+    .img-box {
+        width: 70%;
+        margin: 0 auto;
+        text-align: center;
+
+    }
+
+    .hobby {
+        color: #faf3f7;
+        font-size: 17px;
+        background: linear-gradient(transparent 10%, #f37792 30%);
+    }
+
+
+    .blog_list {
+        max-width: 1060px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-left: 0px;
+    }
+
+    .blog_list img {
+        display: flex;
+        width: 20%;
+        height: auto;
+        margin: 0 auto;
+        object-fit: cover;
+    }
+
+}
+
+
+
+/*------------*/
+/* ボタン */
+/*------------*/
+
+.button {
+    display: block;
+    width: 160px;
+    height: 36px;
+    padding: 5px;
+    margin: 0 auto;
+    margin-top: 30px;
+    /* 中央寄せ */
+    text-align: center;
+    background: linear-gradient(to right, #faf7f9f1 0%, #fac9d6e9 45%, #f5e8ef 100%);
+    background-size: 200% auto;
+    color: #f98b8b;
+    line-height: 36px;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+.button:hover {
+    color: #f8cfdae9;
+    background-position: right center;
+}
+
+.button_li {
+    color: #f37792;
+    text-align: center;
+    border: #f5ecf1;
+    /* margin-top: 20px; */
+}
+
+@keyframes shine {
+
+    /*アニメーションの動き指定*/
+    0% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.Contact {
+    padding: 50px;
+}
+
+
+
+/* ---------- */
+/* pc */
+@media(width>=1060px) {
+
+    /* ボタン */
+
+    .button {
+        display: block;
+        width: 160px;
+        height: 36px;
+        padding: 5px;
+        margin: 0 auto;
+        margin-top: 30px;
+        /* 中央寄せ */
+        text-align: center;
+        background: linear-gradient(to right, #faf7f9f1 0%, #fac9d6e9 45%, #f5e8ef 100%);
+        background-size: 200% auto;
+        color: #f98b8b;
+        line-height: 36px;
+        text-decoration: none;
+        border-radius: 20px;
+    }
+
+    .button:hover {
+        color: #f8cfdae9;
+        background-position: right center;
+    }
+
+    .button_li {
+        color: #f37792;
+        text-align: center;
+        border: #f5ecf1;
+        /* margin-top: 20px; */
+    }
+
+    @keyframes shine {
+
+        /*アニメーションの動き指定*/
+        0% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+}
+
+
+
+
+/* ---------- */
+/* tablet */
+@media(width>=700px) {
+    .service_list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+
+        /* border: 2px solid red; */
+    }
+
+    .service_list li {
+        /* border: 2px solid blue; */
+
+        max-width: 320px;
+    }
+}
+
+/* ---------- */
+/* pc */
+@media(width>=1060px) {
+    .service .more {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
