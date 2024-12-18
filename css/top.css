@@ -548,21 +548,7 @@
 /* ----- */
 /* works */
 /* ----- */
-/* .works_list li {
-    padding: 30px;
-    margin: 0px;
-    padding-left: 0px;
-    list-style: none;
-}
 
-.works_list img {
-    margin-bottom: 20px;
-}
-
-.works {
-    max-width: 200px;
-    margin: 0 auto;
-} */
 .works_list {
     max-width: 350px;
     margin: 0 auto;
@@ -574,10 +560,10 @@ ul {
 
 .works_list img {
     display: flex;
-    margin: 0 auto 10 auto;
+    margin: 30 auto 20 auto;
     padding-left: 0%;
-    width: 80%;
-    height: 300px;
+    width: 70%;
+    height: 200px;
     object-fit: cover;
 }
 
