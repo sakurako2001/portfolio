@@ -182,7 +182,14 @@
         sway1 3s ease-in-out infinite alternate;
     animation-delay: 2s;
 }
-
+ .sakura li:nth-child(9) {
+        left: 60%;
+        width: 16px;
+        height: 10px;
+        animation: fall 6s linear infinite,
+            sway2 4s ease-in-out infinite alternate;
+        animation-delay: 4s;
+    }
 
 /* 横に揺れるアニメーション */
 @keyframes sway {
@@ -396,7 +403,7 @@
 /* name */
 /* ==================== */
 .name {
-    font-size: 25px;
+    font-size: 50px;
     text-align: center;
     margin-bottom: 200px;
     margin-top: 150px;
