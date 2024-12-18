@@ -1,48 +1,5 @@
 @charset "utf-8";
 
-/* .ttl_box {
-
-    text-align: center;
-    margin-bottom: 15px;
-    margin-top: 60px;
-    font-family: "Just Me Again Down Here", cursive;
-    font-size: 30px;
-}
-
-.ttl_box span {
-    display: inline-block;
-}
-
-.ttl_box .ttl {
-    letter-spacing: 0.1em;
-    margin-bottom: 8px;
-}
-
-.sb_ttl {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 10px;
-} */
-
-
-
-/* ---------- */
-/* pc */
-/* @media(width>=1060px) {
-    .ttl_box {
-        text-align: center;
-        margin-top: 100px;
-        font-size: 50px;
-        font-family: "Just Me Again Down Here", cursive;
-    }
-
-    .sb_ttl {
-        text-align: center;
-        margin-bottom: 30px;
-        font-size: 13px;
-    }
-} */
-
 /* ローディング画面 */
 .loading {
     position: fixed;
