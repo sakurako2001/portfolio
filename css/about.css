@@ -50,6 +50,7 @@ p {
 .scroll-infinity__wrap {
     display: flex;
     overflow: hidden;
+    magin-top: 30px;
 }
 
 .scroll-infinity__list {
@@ -64,7 +65,7 @@ p {
 
 .scroll-infinity__item {
     width: calc(100vw / 6);
-    magin-top: 30px;
+    
 }
 
 .scroll-infinity__item>img {
@@ -207,6 +208,7 @@ p {
     .scroll-infinity__wrap {
         display: flex;
         overflow: hidden;
+        magin-top: 30px;
     }
 
     .scroll-infinity__list {
