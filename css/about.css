@@ -64,6 +64,7 @@ p {
 
 .scroll-infinity__item {
     width: calc(100vw / 6);
+    magin-top: 30px;
 }
 
 .scroll-infinity__item>img {
