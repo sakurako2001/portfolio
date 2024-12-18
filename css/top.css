@@ -153,7 +153,7 @@
     height: 10px;
     animation: fall 10s linear infinite,
         sway1 4s ease-in-out infinite alternate;
-    animation-delay: 0s;
+    animation-delay: 2s;
 }
 
 .sakura li:nth-child(6) {
@@ -340,7 +340,7 @@
         height: 10px;
         animation: fall 10s linear infinite,
             sway1 4s ease-in-out infinite alternate;
-        animation-delay: 0s;
+        animation-delay: 2s;
     }
 
     .sakura li:nth-child(6) {
@@ -441,7 +441,7 @@
 /* pc */
 @media(width>=1060px) {
     .name {
-        font-size: 50px;
+        font-size: 60px;
         text-align: center;
         margin-bottom: 200px;
         margin-top: 200px;
